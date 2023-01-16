@@ -1,0 +1,24 @@
+From 547651868ecfc11807c0a668ebb5bc807d0e2746 Mon Sep 17 00:00:00 2001
+From: Xinyu Feng <xinyu.feng.kx@renesas.com>
+Date: Sat, 19 Mar 2022 11:19:00 +0900
+Subject: [PATCH] Enable SD Card.
+
+---
+ arch/arm64/boot/dts/renesas/r8a779f0-spider.dts | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/renesas/r8a779f0-spider.dts b/arch/arm64/boot/dts/renesas/r8a779f0-spider.dts
+index 2be191cac097..cc817da5644e 100644
+--- a/arch/arm64/boot/dts/renesas/r8a779f0-spider.dts
++++ b/arch/arm64/boot/dts/renesas/r8a779f0-spider.dts
+@@ -5,6 +5,8 @@
+  * Copyright (C) 2021 Renesas Electronics Corp.
+  */
+
++#define S4_USE_SD 1
++
+ /dts-v1/;
+ #include "r8a779f0-spider-cpu.dtsi"
+ #include "r8a779f0-spider-ethernet.dtsi"
+--
+2.25.1

@@ -1,3 +1,3 @@
-RDEPENDS:${PN} += " \
+RDEPENDS_${PN} += " \
     nativesdk-cmake \
 "

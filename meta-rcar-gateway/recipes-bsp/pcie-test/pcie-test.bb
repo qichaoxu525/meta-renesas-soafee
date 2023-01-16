@@ -1,5 +1,5 @@
 SUMMARY = "PCIe test aplications"
-LICENSE = "GPL-2.0-only"
+LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://ep_setup.sh;beginline=2;endline=2;md5=daad6f7f7a0a286391cd7773ccf79340"
 
 S = "${WORKDIR}/pcie_test"
@@ -15,5 +15,5 @@ do_install() {
     install -m 755 ${S}/pcitest ${D}${ROOT_HOME}
 }
 
-FILES:${PN} = "${ROOT_HOME}/*"
+FILES_${PN} = "${ROOT_HOME}/*"
 

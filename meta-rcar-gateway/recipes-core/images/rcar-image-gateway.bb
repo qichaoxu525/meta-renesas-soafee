@@ -9,7 +9,7 @@ IMAGE_FEATURES += " \
 "
 
 # Packages for Gateway platform
-IMAGE_INSTALL:append = " \
+IMAGE_INSTALL_append = " \
     kernel-module-uio-pdrv-genirq \
     kernel-module-cmemdrv \
     kernel-module-cmemdrv-dev \

@@ -2,7 +2,7 @@ DESCRIPTION = "QoS driver for the R-Car Gen3"
 
 require include/rcar-bsp-modules-common.inc
 
-LICENSE = "GPLv2 & MIT"
+LICENSE = "GPL-2.0-only & MIT"
 LIC_FILES_CHKSUM = " \
     file://GPL-COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
     file://MIT-COPYING;md5=192063521ce782a445a3c9f99a8ad560 \
@@ -14,7 +14,7 @@ DEPENDS = "linux-renesas"
 PN = "kernel-module-qos"
 PR = "r0"
 
-QOS_DRV_URL = "git://github.com/renesas-rcar/qos_drv.git;protocol=https"
+QOS_DRV_URL = "git://github.com/renesas-rcar/qos_drv.git;protocol=https;branch=master"
 BRANCH = "rcar-gen3"
 SRCREV = "e689b63ed8ae76c237f24a967a61c4f93f6a1db6"
 
@@ -57,10 +57,10 @@ PACKAGES = " \
     ${PN}-dbg \
 "
 
-FILES_${PN} = " \
+FILES:${PN} = " \
     /lib/modules/${KERNEL_VERSION}/extra/qos.ko \
 "
 
-FILES_${PN}-dev = " \
+FILES:${PN}-dev = " \
     /include/qos_public_common.h \
 "

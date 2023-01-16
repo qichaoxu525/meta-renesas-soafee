@@ -1,5 +1,5 @@
 SUMMARY = "CPURTT drive Module"
-LICENSE = "GPLv2 & MIT"
+LICENSE = "GPL-2.0-only & MIT"
 LIC_FILES_CHKSUM = " \
     file://${S}/GPL-COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
     file://${S}/MIT-COPYING;md5=fea016ce2bdf2ec10080f69e9381d378 \
@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = " \
 
 inherit module
 
-RENESAS_CPURTTDRV_URL ?= "git://github.com/renesas-rcar/cpurttdrv3.git;protocol=https"
+RENESAS_CPURTTDRV_URL ?= "git://github.com/renesas-rcar/cpurttdrv3.git;protocol=https;branch=master"
 SRCREV = "a0e8c81209348061fee0a8e3ae34dbfa971d80cf"
 
 SRC_URI = "${RENESAS_CPURTTDRV_URL};nobranch=1"
@@ -29,7 +29,7 @@ do_install () {
     install -m 644 ${S}/v4h/cpurtt_common.h ${D}${prefix}/local/include/cpurttmod3_v4h
 }
 
-FILES_${PN}-dev = " \
+FILES:${PN}-dev = " \
     ${includedir}/kernel-module-cpurttdrv3 \
     ${prefix}/local/include/cpurttmod3_v4h \
 "

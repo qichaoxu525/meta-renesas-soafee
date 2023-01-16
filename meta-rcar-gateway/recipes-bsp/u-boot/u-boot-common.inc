@@ -6,7 +6,7 @@ application code."
 SECTION = "bootloaders"
 DEPENDS += "flex-native bison-native"
 
-LICENSE = "GPL-2.0-or-later"
+LICENSE = "GPLv2+"
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=5a7450c57ffe5ae63fd732446b988025"
 PE = "1"
 
@@ -14,7 +14,7 @@ PE = "1"
 # repo during parse
 SRCREV = "050acee119b3757fee3bd128f55d720fdd9bb890"
 
-SRC_URI = "git://git.denx.de/u-boot.git;branch=master \
+SRC_URI = "git://git.denx.de/u-boot.git \
           "
 
 S = "${WORKDIR}/git"

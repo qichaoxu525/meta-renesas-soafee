@@ -1,7 +1,7 @@
 HOMEPAGE = "http://www.denx.de/wiki/U-Boot/WebHome"
 SECTION = "bootloaders"
 
-LICENSE = "GPLv2+"
+LICENSE = "GPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=5a7450c57ffe5ae63fd732446b988025"
 PE = "1"
 
@@ -11,7 +11,7 @@ require u-boot.inc
 
 DEPENDS += "flex-native bison-native bc-native dtc-native lzop-native srecord-native"
 
-UBOOT_URL = "git://github.com/renesas-rcar/u-boot.git;protocol=https"
+UBOOT_URL = "git://github.com/renesas-rcar/u-boot.git;protocol=https;branch=master"
 BRANCH = "v2022.01/rcar-6.0.0.rc1"
 
 SRC_URI = "${UBOOT_URL};branch=${BRANCH}"
@@ -23,7 +23,7 @@ UBOOT_SREC ?= "u-boot-elf.${UBOOT_SREC_SUFFIX}"
 UBOOT_SREC_IMAGE ?= "u-boot-elf-${MACHINE}-${PV}-${PR}.${UBOOT_SREC_SUFFIX}"
 UBOOT_SREC_SYMLINK ?= "u-boot-elf-${MACHINE}.${UBOOT_SREC_SUFFIX}"
 
-do_deploy_append() {
+do_deploy:append() {
     if [ -n "${UBOOT_CONFIG}" ]
     then
         for config in ${UBOOT_MACHINE}; do

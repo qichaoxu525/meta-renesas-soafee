@@ -1,3 +1,3 @@
-FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI:append = " file://add-non-owned-item-for-safe-transitioning.patch"
+SRC_URI_append = " file://add-non-owned-item-for-safe-transitioning.patch"

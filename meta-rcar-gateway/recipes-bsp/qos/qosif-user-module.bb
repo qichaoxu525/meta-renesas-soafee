@@ -41,12 +41,12 @@ PACKAGES = " \
     ${PN}-dbg \
 "
 
-FILES:${PN} = " \
+FILES_${PN} = " \
     ${libdir}/libqos.so* \
 "
 
-FILES:${PN}-dev = " \
+FILES_${PN}-dev = " \
     /include/qos_public.h \
 "
 
-INSANE_SKIP:${PN} = "dev-so"
+INSANE_SKIP_${PN} = "dev-so"

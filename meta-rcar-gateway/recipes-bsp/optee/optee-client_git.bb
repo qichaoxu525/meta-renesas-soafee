@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=69663ab153298557a59c67a60a743e5b"
 PR = "r0"
 PV = "3.13.0+renesas+git${SRCPV}"
 BRANCH = "master"
-SRC_URI = "git://github.com/OP-TEE/optee_client.git;branch=${BRANCH};protocol=https"
+SRC_URI = "git://github.com/OP-TEE/optee_client.git;branch=${BRANCH}"
 SRCREV = "7c9c423d00e96bf51debd5fe10fd70dce83be5cc"
 
 SRC_URI += " \
@@ -14,7 +14,7 @@ SRC_URI += " \
 "
 
 inherit python3native systemd
-SYSTEMD_SERVICE:${PN} = "optee.service"
+SYSTEMD_SERVICE_${PN} = "optee.service"
 
 COMPATIBLE_MACHINE = "spider"
 
@@ -51,5 +51,5 @@ do_install () {
     fi
 }
 
-RPROVIDES:${PN} += "optee-client"
+RPROVIDES_${PN} += "optee-client"
 

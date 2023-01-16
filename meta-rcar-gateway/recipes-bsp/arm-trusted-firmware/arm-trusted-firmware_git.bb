@@ -10,14 +10,14 @@ inherit deploy
 S = "${WORKDIR}/git"
 
 BRANCH = "rcar-s4_v2.5"
-SRC_URI = "git://github.com/renesas-rcar/arm-trusted-firmware.git;branch=${BRANCH};protocol=https"
+SRC_URI = "git://github.com/renesas-rcar/arm-trusted-firmware.git;branch=${BRANCH}"
 SRCREV = "3a6d7ddd5d90ecf2107c5fc627f0be069191d6e5"
 
 PV = "v2.5+renesas+git${SRCPV}"
 
 COMPATIBLE_MACHINE = "(spider)"
 PLATFORM = "rcar_gen4"
-ATFW_OPT:r8a779f0 = "LSI=S4 CTX_INCLUDE_AARCH32_REGS=0 LOG_LEVEL=10 DEBUG=0"
+ATFW_OPT_r8a779f0 = "LSI=S4 CTX_INCLUDE_AARCH32_REGS=0 LOG_LEVEL=10 DEBUG=0"
 
 # requires CROSS_COMPILE set by hand as there is no configure script
 export CROSS_COMPILE="${TARGET_PREFIX}"

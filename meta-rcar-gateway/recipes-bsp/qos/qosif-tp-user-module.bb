@@ -29,8 +29,8 @@ PACKAGES = " \
     ${PN}-dbg \
 "
 
-FILES:${PN} = "/bin/qos_tp"
+FILES_${PN} = "/bin/qos_tp"
 
-FILES:${PN}-dbg = " \
+FILES_${PN}-dbg = " \
     ${RENESAS_DATADIR}/bin/.debug/* \
 "

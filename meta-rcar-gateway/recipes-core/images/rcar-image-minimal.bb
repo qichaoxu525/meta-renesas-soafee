@@ -8,9 +8,9 @@ COMPATIBLE_MACHINE = "(spider)"
 EXTRA_IMAGE_FEATURES += "package-management"
 
 # Basic packages
-IMAGE_INSTALL:append = " \
+IMAGE_INSTALL_append = " \
     bash \
 "
-IMAGE_INSTALL:append = " \
+IMAGE_INSTALL_append = " \
     optee-client \
 "

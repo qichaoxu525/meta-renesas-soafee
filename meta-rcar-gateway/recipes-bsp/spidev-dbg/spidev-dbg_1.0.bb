@@ -1,5 +1,5 @@
 SUMMARY = "SPI device debug utility"
-LICENSE = "GPL-2.0-only"
+LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=26cdfe4d6a85afebc7ccd5623f195fa2"
 
 S = "${WORKDIR}/spidev-dbg"
@@ -18,4 +18,4 @@ do_install() {
     install -m 755 ${S}/spidev-dbg ${D}${bindir}
 }
 
-FILES:${PN} = "${bindir}/spidev-dbg"
+FILES_${PN} = "${bindir}/spidev-dbg"

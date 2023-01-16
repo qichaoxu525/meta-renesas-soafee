@@ -15,10 +15,10 @@ BRANCH = "rcar-gen4_3.13"
 SRCREV = "7bdb6c301a393219c5a926c3f489db04fa10adfc"
 
 SRC_URI = " \
-    git://github.com/renesas-rcar/optee_os.git;branch=${BRANCH};protocol=https \
+    git://github.com/renesas-rcar/optee_os.git;branch=${BRANCH} \
 "
 
-SRC_URI:append = " \
+SRC_URI_append = " \
     file://0001-mk-gcc.mk-Change-the-path-to-the-library.patch \
 "
 

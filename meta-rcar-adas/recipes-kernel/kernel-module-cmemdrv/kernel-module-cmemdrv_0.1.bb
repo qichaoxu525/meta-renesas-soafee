@@ -1,5 +1,5 @@
 SUMMARY = "Cache Memory Primitive Module"
-LICENSE = "GPLv2 & MIT"
+LICENSE = "GPL-2.0-only & MIT"
 LIC_FILES_CHKSUM = " \
     file://${S}/GPL-COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
     file://${S}/MIT-COPYING;md5=fea016ce2bdf2ec10080f69e9381d378 \
@@ -10,13 +10,13 @@ inherit module
 PR = "r0"
 PV = "0.1"
 
-RENESAS_CMEM_URL ?= "git://github.com/renesas-rcar/cmem.git;protocol=https"
+RENESAS_CMEM_URL ?= "git://github.com/renesas-rcar/cmem.git;protocol=https;branch=master"
 SRC_URI = "${RENESAS_CMEM_URL};nobranch=1"
 SRCREV = "d420a1ddf8509b788eadca73f6bd843451604bdf"
 
 S = "${WORKDIR}/git"
 
-do_install_append () {
+do_install:append () {
     install -d ${D}${includedir}/linux
     install -m 644 ${S}/cmemdrv.h ${D}${includedir}/linux/
 }

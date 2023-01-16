@@ -1,19 +1,19 @@
 require include/rcar-bsp-path-common.inc
 require include/rcar-kernel-info-common.inc
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}/:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}/:"
 
-SRC_URI_append_rcar = " \
+SRC_URI:append_rcar = " \
     file://fstab \
 "
 
-do_install_append_rcar () {
+do_install:append_rcar () {
     echo "export LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:${RENESAS_DATADIR}/lib\"" >> ${D}${sysconfdir}/profile
 }
 
 inherit module-base
 
-do_install_basefilesissue_append_rcar () {
+do_install_basefilesissue:append_rcar () {
     # Yocto version and codename
     printf "${DISTRO_NAME} " >> ${D}${sysconfdir}/issue.e2
 

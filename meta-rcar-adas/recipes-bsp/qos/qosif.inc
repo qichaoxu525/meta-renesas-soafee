@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = " \
 
 require include/rcar-bsp-modules-common.inc
 
-QOSIF_LIB_URL = "git://github.com/renesas-rcar/qos_lib.git;protocol=https"
+QOSIF_LIB_URL = "git://github.com/renesas-rcar/qos_lib.git;protocol=https;branch=master"
 BRANCH = "rcar-gen3"
 SRCREV = "761a765901ab9e009f6503904276c62fcf5cbb9b"
 

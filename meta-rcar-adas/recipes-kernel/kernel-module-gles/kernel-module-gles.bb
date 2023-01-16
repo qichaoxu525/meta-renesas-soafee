@@ -1,5 +1,5 @@
 DESCRIPTION = "Kernel module of PowerVR GPU"
-LICENSE = "GPLv2 & MIT"
+LICENSE = "GPL-2.0-only & MIT"
 LIC_FILES_CHKSUM = " \
     file://GPL-COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
     file://MIT-COPYING;md5=8c2810fa6bfdc5ae5c15a0c1ade34054 \
@@ -61,10 +61,10 @@ module_clean_symbol() {
     rm -f ${STAGING_KERNEL_BUILDDIR}/GLES.symvers
 }
 
-FILES_${PN} = " \
+FILES:${PN} = " \
     /lib/modules/${KERNEL_VERSION}/extra/pvrsrvkm.ko \
     ${sysconfdir}/modules-load.d \
     ${sysconfdir}/modprobe.d/blacklist.conf \
 "
 
-RPROVIDES_${PN} += "kernel-module-pvrsrvkm"
+RPROVIDES:${PN} += "kernel-module-pvrsrvkm"

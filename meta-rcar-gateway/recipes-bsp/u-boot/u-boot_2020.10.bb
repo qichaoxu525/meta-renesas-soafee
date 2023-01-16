@@ -3,7 +3,7 @@ require u-boot.inc
 
 DEPENDS += "lzop-native srecord-native"
 
-UBOOT_URL = "git://github.com/renesas-rcar/u-boot.git;branch=master;protocol=https"
+UBOOT_URL = "git://github.com/renesas-rcar/u-boot.git"
 BRANCH = "v2020.10/rcar-5.1.1.rc3"
 
 SRC_URI = "${UBOOT_URL};branch=${BRANCH}"
@@ -15,7 +15,7 @@ UBOOT_SREC ?= "u-boot-elf.${UBOOT_SREC_SUFFIX}"
 UBOOT_SREC_IMAGE ?= "u-boot-elf-${MACHINE}-${PV}-${PR}.${UBOOT_SREC_SUFFIX}"
 UBOOT_SREC_SYMLINK ?= "u-boot-elf-${MACHINE}.${UBOOT_SREC_SUFFIX}"
 
-do_deploy:append() {
+do_deploy_append() {
     if [ -n "${UBOOT_CONFIG}" ]
     then
         for config in ${UBOOT_MACHINE}; do

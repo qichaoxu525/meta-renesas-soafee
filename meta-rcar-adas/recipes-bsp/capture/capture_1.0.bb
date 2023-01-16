@@ -1,10 +1,10 @@
 SUMMARY = "Camera application test"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=9504a7b7666faec5abd046d28a69450e"
 
 S = "${WORKDIR}/git"
 
-CAPTURE_URL = "git://github.com/renesas-rcar/capture.git;protocol=https"
+CAPTURE_URL = "git://github.com/renesas-rcar/capture.git;protocol=https;branch=master"
 BRANCH = "rcar_gen3"
 
 SRC_URI = "${CAPTURE_URL};branch=${BRANCH}"
@@ -29,7 +29,7 @@ do_install() {
     install -m 755 ${S}/test_lvds_8cameras_on_display1920x1080.sh ${D}/usr/share/tests/
 }
 
-FILES_${PN} = " \
+FILES:${PN} = " \
     ${bindir}/capture \
     /usr/share/tests/test_lvds_camera_0.sh \
     /usr/share/tests/test_lvds_camera_4.sh \

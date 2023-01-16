@@ -1,6 +1,6 @@
 DESCRIPTION = "OSS packages for S4 development & testing"
 
-LICENSE = "BSD-3-Clause & GPL-2.0-or-later & LGPL-2.0-or-later"
+LICENSE = "BSD-3-Clause & GPLv2+ & LGPLv2+"
 
 inherit packagegroup
 
@@ -67,7 +67,7 @@ RDEPENDS_packagegroup-bsp-testpkg = " \
     util-linux \
     dbench \
     dhrystone \
-    ${@bb.utils.contains("LICENSE_FLAGS_ACCEPTED", "non-commercial", "netperf", "", d)} \
+    ${@bb.utils.contains("LICENSE_FLAGS_WHITELIST", "non-commercial", "netperf", "", d)} \
     whetstone \
 "
 

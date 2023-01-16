@@ -2,7 +2,7 @@ DESCRIPTION = "QoS driver for S4"
 
 require include/rcar-bsp-modules-common.inc
 
-LICENSE = "GPL-2.0-only & MIT"
+LICENSE = "GPLv2 & MIT"
 LIC_FILES_CHKSUM = " \
     file://GPL-COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
     file://MIT-COPYING;md5=192063521ce782a445a3c9f99a8ad560 \
@@ -14,7 +14,7 @@ DEPENDS = "linux-renesas"
 PN = "kernel-module-qos"
 PR = "r0"
 
-QOS_DRV_URL = "git://github.com/renesas-rcar/qos_drv.git;protocol=https;branch=master"
+QOS_DRV_URL = "git://github.com/renesas-rcar/qos_drv.git;protocol=https"
 BRANCH = "rcar-gen3"
 SRCREV = "ffbd6d68968a0b0989c3ffb1eabc9b536215fcee"
 
@@ -57,10 +57,10 @@ PACKAGES = " \
     ${PN}-dbg \
 "
 
-FILES:${PN} = " \
+FILES_${PN} = " \
     /lib/modules/${KERNEL_VERSION}/extra/qos.ko \
 "
 
-FILES:${PN}-dev = " \
+FILES_${PN}-dev = " \
     /include/qos_public_common.h \
 "
